@@ -117,7 +117,7 @@
                                     Fri 27 Nov 2016
                                 </p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo</p>
-                                <a href="#" class="btn s-full-width">Buy Tickets</a>
+                                <button class="btn s-full-width js-buy-ticket">Buy Tickets</button>
                             </div>
                         </div>
 
@@ -129,7 +129,7 @@
                                     Fri 27 Nov 2016
                                 </p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo</p>
-                                <a href="#" class="btn s-full-width">Buy Tickets</a>
+                                <button class="btn s-full-width js-buy-ticket">Buy Tickets</button>
                             </div>
                         </div>
 
@@ -141,7 +141,7 @@
                                     Fri 27 Nov 2016
                                 </p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo</p>
-                                <a href="#" class="btn s-full-width">Buy Tickets</a>
+                                <button class="btn s-full-width js-buy-ticket">Buy Tickets</button>
                             </div>
                         </div>
                     </div>
@@ -264,6 +264,32 @@
 
             }
         }
+    </script>
+
+    <script>
+        const buyBtns = document.querySelectorAll('.js-buy-ticket')
+        const modal = document.querySelector('.modal')
+        const modalClose = document.querySelector('.modal-close')
+        const modalContainer = document.querySelector('.modal-container')
+
+        function showBuyTickets(){
+                 modal.classList.add('open');
+            }
+            
+        function hideBuyTickets(){
+                 modal.classList.remove('open');
+            }
+            
+            
+        for(const buyBtn of buyBtns){
+            buyBtn.addEventListener('click', showBuyTickets);
+        }
+
+        modalClose.addEventListener ('click',hideBuyTickets);
+        modal.addEventListener('click',hideBuyTickets);
+        modalContainer.addEventListener('click',function(event){
+            event.stopPropagation();
+        })
     </script>
 </body>
 

@@ -203,7 +203,7 @@ html{
     position: relative;
     margin-top: 46px;
     padding-top: 50%;
-    background: url('/assets/img/slider/slider1.jpeg') top center / cover no-repeat;
+    background: url('../img/slider/slider1.jpeg') top center / cover no-repeat;
  }
  #slider .text-content{
      position: absolute;
@@ -223,6 +223,7 @@ html{
 #slider .text-description{
     font-size: 15px;
     margin-top: 25px;
+    text-shadow: 0 0 1px #000;
 }
 
  #content{
@@ -372,6 +373,7 @@ html{
     width: 900px;
     max-width: calc(100% - 32px);
     min-height: 200px;
+    animation: modalFadeIn ease .3s;
 }
 
 .modal-header{
@@ -504,4 +506,13 @@ html{
 #footer .copy-right{
     margin-top: 15px;
     color: rgba(0, 0, 0, 0.5);
+}
+
+@keyframes modalFadeIn {
+    from{
+        transform: translateY((-130px));
+    }
+    to{
+        transform: translateY(0);
+    }
 }
